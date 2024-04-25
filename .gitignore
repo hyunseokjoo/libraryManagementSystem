@@ -138,7 +138,7 @@ ENV/
 env.bak/
 venv.bak/
 .vscode/
-.db
+LMS.db
 # # Spyder project settings
 # .spyderproject
 # .spyproject
