@@ -10,7 +10,7 @@ from LMS.database.core import DbSession
 router = APIRouter()
 
 @router.get("/", response_model=UserList)
-def get_user(db_session: DbSession):
+def get_users(db_session: DbSession):
     user = get_all(db_session=db_session)
     if not user:
         raise HTTPException(
