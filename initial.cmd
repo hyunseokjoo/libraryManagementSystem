@@ -9,5 +9,20 @@ source ./venv/Scripts/activate
 python.exe -m pip install --upgrade pip
 pip install -r ./requiremets.txt
 
-@REM 패키지 setup 
+@REM 패키지 setup 로 시작하기
 python setup.py install
+
+@REM 패키지 poetry 로 시작하기 
+poetry new @REM 패키지 생성, 안해도 됨
+poetry install
+
+
+@REM 번외
+@REM 패키지 setup 로 배포 하기 (아래 둘 중 하나 사용)
+python setup.py install
+pip install -e .
+python -m twine upload dist/*
+
+@REM 패키지 poetry로 배포하기 
+poetry build 
+poetry publish
