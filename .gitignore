@@ -144,6 +144,7 @@ build/
 dist/
 eggs/
 *.egg-info/
+*.lock
 # # Spyder project settings
 # .spyderproject
 # .spyproject

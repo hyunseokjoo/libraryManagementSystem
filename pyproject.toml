@@ -1,0 +1,23 @@
+[tool.poetry]
+name = "lms"
+version = "0.1.0"
+description = ""
+authors = ["JooSsi"]
+license = "JooSsi"
+readme = "README.md"
+
+
+[tool.poetry.dependencies]
+python = "^3.9"
+fastapi = "0.110.2"
+uvicorn = "0.29.0"
+starlette = "0.37.2"
+sqlalchemy = "2.0.29"
+pydantic = "==1.*"
+
+[tool.poetry.group.dev.dependencies]
+pytest = "8.1.1"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
