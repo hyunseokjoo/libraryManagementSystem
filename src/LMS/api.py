@@ -2,8 +2,8 @@ from fastapi import APIRouter
 
 from starlette.responses import JSONResponse
 
-from .user.views import router as user_router
-from .book.views import router as book_router
+from LMS.user.views import router as user_router
+from LMS.book.views import router as book_router
 
 api_router = APIRouter(
     default_response_class=JSONResponse,

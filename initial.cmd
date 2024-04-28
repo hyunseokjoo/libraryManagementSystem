@@ -9,7 +9,5 @@ source ./venv/Scripts/activate
 python.exe -m pip install --upgrade pip
 pip install -r ./requiremets.txt
 
-@REM webserver 실행
-uvicorn src.LMS.main:app --reload
-
-@REM 
+@REM 패키지 setup 
+python setup.py install

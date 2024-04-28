@@ -8,7 +8,8 @@ from starlette.requests import Request
 
 from .api import api_router
 from .config import SQLALCHEMY_DATABASE_URL
-from .database.core import engine, sessionmaker
+
+from LMS.database.core import engine, sessionmaker
 
 app = FastAPI()
 

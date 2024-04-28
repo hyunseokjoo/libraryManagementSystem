@@ -4,7 +4,7 @@ from sqlalchemy.exc import IntegrityError
 
 from .service import get, get_all, create, update, delete
 from .models import UserRead, UserUpdate, UserCreate, UserDelete, UserList
-from ..database.core import DbSession
+from LMS.database.core import DbSession
 
 
 router = APIRouter()

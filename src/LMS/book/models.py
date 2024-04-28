@@ -2,10 +2,8 @@ from typing import Optional, List
 
 from sqlalchemy import Column, Integer, String, Boolean
 
-from ..models import LMSBaseModel
-from ..database.core import Base
-
-
+from LMS.models import LMSBaseModel
+from LMS.database.core import Base
 
 
 class Book(Base):

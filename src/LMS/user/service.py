@@ -1,5 +1,5 @@
 from typing import Optional, List
-from ..database.core import DbSession
+from LMS.database.core import DbSession
 from .models import User, UserCreate, UserUpdate
 
 def get(*, db_session, user_id: int) -> Optional[User]:
