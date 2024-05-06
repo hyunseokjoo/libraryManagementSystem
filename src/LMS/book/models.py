@@ -1,9 +1,9 @@
-from typing import Optional, List
+from typing import List, Optional
 
-from sqlalchemy import Column, Integer, String, Boolean
+from sqlalchemy import Boolean, Column, Integer, String
 
-from LMS.models import LMSBaseModel
 from LMS.database.core import Base
+from LMS.models import LMSBaseModel
 
 
 class Book(Base):
@@ -15,24 +15,28 @@ class Book(Base):
 
 
 class BookBase(LMSBaseModel):
-    id : int
-    title : str
-    author : str
-    borrowed : bool
-    borrowing_userid : int
+    id: int
+    title: str
+    author: str
+    borrowed: bool
+    borrowing_userid: int
+
 
 class BookCreate(BookBase):
     pass
 
+
 class BookRead(BookBase):
     pass
+
 
 class BookUpdate(BookBase):
     pass
 
+
 class BookDelete(BookBase):
     pass
 
-class BookList(BookBase):
-    items : Optional[List[BookRead]] = []
 
+class BookList(BookBase):
+    items: Optional[List[BookRead]] = []

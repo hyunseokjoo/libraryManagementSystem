@@ -1,20 +1,24 @@
-from typing import Optional, List
+from typing import List, Optional
+
 from LMS.database.core import DbSession
+
 from .models import User, UserCreate, UserUpdate
+
 
 def get(*, db_session, user_id: int) -> Optional[User]:
     return db_session.query(User).filter(User.id == user_id).first()
 
+
 def get_all(*, db_session, limit=100):
-    return {
-        "items" : db_session.query(User).all()
-    }
+    return {"items": db_session.query(User).all()}
+
 
 def create(*, db_session, user_in: UserCreate) -> User:
     user = User(**user_in.dict())
     db_session.add(user)
     db_session.commit()
     return user
+
 
 def update(*, db_session, user: User, user_in: UserUpdate) -> User:
     user_data = user.__dict__
@@ -25,6 +29,7 @@ def update(*, db_session, user: User, user_in: UserUpdate) -> User:
 
     db_session.commit()
     return user
+
 
 def delete(*, db_session, user_id: int):
     user = db_session.query(User).filter(User.id == user_id)

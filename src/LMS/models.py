@@ -1,5 +1,6 @@
 from pydantic import BaseModel
 
+
 # Pydantic models...
 class LMSBaseModel(BaseModel):
     class Config:

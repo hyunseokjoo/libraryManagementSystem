@@ -1,26 +1,29 @@
-from uuid import uuid1
-from typing import Optional, Final
 from contextvars import ContextVar
-from fastapi import FastAPI
+from typing import Final, Optional
+from uuid import uuid1
 
+from fastapi import FastAPI
 from sqlalchemy.orm import scoped_session
 from starlette.requests import Request
 
+from LMS.database.core import engine, sessionmaker
+
 from .api import api_router
 from .config import SQLALCHEMY_DATABASE_URL
-
-from LMS.database.core import engine, sessionmaker
 
 app = FastAPI()
 
 app.include_router(api_router)
 
-@app.get('/')
+
+@app.get("/")
 async def root():
-    return {"message" : "도서 관리 백엔드 입니다."}
+    return {"message": "도서 관리 백엔드 입니다."}
+
 
 REQUEST_ID_CTX_KEY: Final[str] = "request_id"
 _request_id_ctx_var: ContextVar[Optional[str]] = ContextVar(REQUEST_ID_CTX_KEY, default=None)
+
 
 def get_request_id() -> Optional[str]:
     return _request_id_ctx_var.get()
