@@ -138,13 +138,22 @@ ENV/
 env.bak/
 venv.bak/
 .vscode/
-LMS.db
-
 build/
 dist/
 eggs/
 *.egg-info/
 *.lock
+.python-version
+
+
+# relates to lint format
+.mypy_cache
+.ruff_cache
+
+
+
+# relates to docker
+volume/
 # # Spyder project settings
 # .spyderproject
 # .spyproject
